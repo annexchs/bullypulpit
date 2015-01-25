@@ -41,7 +41,6 @@
                   $nav->display();
                   ?>
                 </nav>
-                <p class="text5"><a class="dotted-link" href="/concrete/index.php/get-involved/support">donate</a></p>
                 <p class="mobile-nav">
                   <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                   	 viewBox="0 0 32 32" enable-background="new 0 0 32 32" width="14" height="14" xml:space="preserve">
