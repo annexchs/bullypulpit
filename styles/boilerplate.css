@@ -455,7 +455,7 @@ dotted-link:hover{
   margin: 0px 0px 0px 0%;
   clear: none;
   width: auto;
-  background-color: #4d4d4d;
+  background-color: #012639;
   min-width: 100%;
   position: relative;
   top: 0px;
@@ -470,7 +470,7 @@ dotted-link:hover{
   width: 217px;
   min-height: 0px;
   margin-right: 0%;
-  background-color: #660000;
+  background-color: #012639;
 }
 .primaryContainer #box5 {
   float: left;
