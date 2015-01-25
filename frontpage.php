@@ -141,13 +141,20 @@
             $pl1->sortByPublicDateDescending();
             $pages1 = $pl1->get($itemsToGet = 1, $offset = 0);
             $p1 = $pages1[0];
+
+            $pl2 = new Pagelist();
+            $pl2->filterByPath('/events-list', $includeAllChildren = true);
+            $pl2->filterByIsFeatured(0);
+            $pl2->sortByPublicDateDescending();
+            $pages2 = $pl2->get();
+            $p2 = $pages2[0];
         ?>
         <div id="box10" class="clearfix">
             <div id="box11" class="clearfix header-block-wrapper">
                 <div id="box12" class="clearfix">
                     <a href="<?php echo $nh1->getLinkToCollection($p1);?>">
                         <div id="box13" class="clearfix">
-                            <p class="header-block-type"></p>
+                            <p class="header-block-type">Student Spotlight</p>
                             <?php
                                 $postTitle = $p1->getCollectionName();
                                 $toPost = "";
@@ -167,11 +174,11 @@
             </div>
             <div id="box14" class="clearfix header-block-wrapper">
                 <div id="box15" class="clearfix">
-                    <a href="<?php $p2=$pages1[1]; echo $nh1->getLinkToCollection($p2);?>">
+                    <a href="<?php echo $nh1->getLinkToCollection($p1);?>">
                         <div id="box16" class="clearfix">
-                            <p class="header-block-type"></p>
+                            <p class="header-block-type" style="color: black;">Blog</p>
                             <?php
-                                $postTitle = $p2->getCollectionName();
+                                $postTitle = $p1->getCollectionName();
                                 $toPost = "";
 
                                 if(strlen($postTitle)>20) {
@@ -181,7 +188,7 @@
                                     $toPost = $postTitle;
                                 }
 
-                                echo '<p class="header-block-headline" style="color: black">',$toPost,'</p>';
+                                echo '<p class="header-block-headline" style="color: black;">',$toPost,'</p>';
                             ?>
                         </div>
                     </a>
@@ -189,9 +196,9 @@
             </div>
             <div id="box17" class="clearfix header-block-wrapper">
                 <div id="box18" class="clearfix">
-                    <a href="<?php $p3=$pages1[2]; echo $nh1->getLinkToCollection($p3);?>">
+                    <a href="<?php $p3=$pages2[0]; echo $nh1->getLinkToCollection($p3);?>">
                         <div id="box19" class="clearfix">
-                            <p class="header-block-type"></p>
+                            <p class="header-block-type">Event</p>
                             <?php
                                 $postTitle = $p3->getCollectionName();
                                 $toPost = "";
