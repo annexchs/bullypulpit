@@ -81,7 +81,7 @@
                       $nh = Loader::helper('navigation');
                       $pl = new PageList();
                       $pl->filterByPath('/events_list', $includeAllChildren = true);
-                      $pl->sortByDisplayOrder();
+                      $pl->sortByPublicDate();
                       $pages = $pl->get($itemsToGet = 10, $offset = 0);
 
                       foreach ($pages as $p) {
