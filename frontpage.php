@@ -146,24 +146,34 @@
             $pl2->filterByPath('/events-list', $includeAllChildren = true);
             $pl2->filterByIsFeatured(0);
             $pl2->sortByPublicDateDescending();
-            $pages2 = $pl2->get();
-            $p2 = $pages2[0];
+            $pages2 = $pl2->get($itemsToGet = 1, $offest = 0);
+            if($pages2[0] == null) {
+                $p2 = $pages[0];
+            }
+            else {
+                $p2 = $pages2[0];
+            }
         ?>
         <div id="box10" class="clearfix">
             <div id="box11" class="clearfix header-block-wrapper">
                 <div id="box12" class="clearfix">
-                    <a href="<?php echo $nh1->getLinkToCollection($p1);?>">
+                    <a href="<?php if($p1 != null){echo $nh1->getLinkToCollection($p1);};?>">
                         <div id="box13" class="clearfix">
                             <p class="header-block-type">Student Spotlight</p>
                             <?php
-                                $postTitle = $p1->getCollectionName();
-                                $toPost = "";
+                                if($p1 != null) {
+                                    $postTitle = $p1->getCollectionName();
+                                    $toPost = "";
 
-                                if(strlen($postTitle)>20) {
-                                    $toPost = blogChop($postTitle);
+                                    if(strlen($postTitle)>20) {
+                                        $toPost = blogChop($postTitle);
+                                    }
+                                    else {
+                                        $toPost = $postTitle;
+                                    }
                                 }
                                 else {
-                                    $toPost = $postTitle;
+                                    $toPost = 'No Updates';
                                 }
 
                                 echo '<p class="header-block-headline">',$toPost,'</p>';
