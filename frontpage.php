@@ -135,13 +135,17 @@
         ?>
         <?php
             Loader::model('page_list');
+
+            //latest blog post
             $nh1 = Loader::helper('navigation');
             $pl1 = new PageList();
             $pl1->filterByPath('/updates', $includeAllChildren = true);
+            $pl1->filterByStudentspotlight(0);
             $pl1->sortByPublicDateDescending();
             $pages1 = $pl1->get($itemsToGet = 1, $offset = 0);
             $p1 = $pages1[0];
 
+            //latest event
             $pl2 = new Pagelist();
             $pl2->filterByPath('/events-list', $includeAllChildren = true);
             $pl2->filterByIsFeatured(0);
@@ -153,16 +157,24 @@
             else {
                 $p2 = $pages2[0];
             }
+
+            //Student Spotlight
+            $pl3 = new Pagelist();
+            $pl3->filterByPath('/updates', $includeAllChildren = true);
+            $pl3->filterByStudentspotlight(1);
+            $pl3->sortByPublicDateDescending();
+            $pages3 = $pl3->get();
+            $p3 = $pages3[0];
         ?>
         <div id="box10" class="clearfix">
             <div id="box11" class="clearfix header-block-wrapper">
                 <div id="box12" class="clearfix">
-                    <a href="<?php if($p1 != null){echo $nh1->getLinkToCollection($p1);};?>">
+                    <a href="<?php if($p3 != null){echo $nh1->getLinkToCollection($p3);};?>">
                         <div id="box13" class="clearfix">
                             <p class="header-block-type">Student Spotlight</p>
                             <?php
-                                if($p1 != null) {
-                                    $postTitle = $p1->getCollectionName();
+                                if($p3 != null) {
+                                    $postTitle = $p3->getCollectionName();
                                     $toPost = "";
 
                                     if(strlen($postTitle)>20) {
@@ -184,18 +196,23 @@
             </div>
             <div id="box14" class="clearfix header-block-wrapper">
                 <div id="box15" class="clearfix">
-                    <a href="<?php echo $nh1->getLinkToCollection($p1);?>">
+                    <a href="<?php if($p1 != null){echo $nh1->getLinkToCollection($p1);};?>">
                         <div id="box16" class="clearfix">
                             <p class="header-block-type" style="color: black;">Blog</p>
                             <?php
-                                $postTitle = $p1->getCollectionName();
-                                $toPost = "";
+                                if($p1 != null) {
+                                    $postTitle = $p1->getCollectionName();
+                                    $toPost = "";
 
-                                if(strlen($postTitle)>20) {
-                                    $toPost = blogChop($postTitle);
+                                    if(strlen($postTitle)>20) {
+                                        $toPost = blogChop($postTitle);
+                                    }
+                                    else {
+                                        $toPost = $postTitle;
+                                    }
                                 }
                                 else {
-                                    $toPost = $postTitle;
+                                    $toPost = 'No Updates';
                                 }
 
                                 echo '<p class="header-block-headline" style="color: black;">',$toPost,'</p>';
@@ -206,11 +223,11 @@
             </div>
             <div id="box17" class="clearfix header-block-wrapper">
                 <div id="box18" class="clearfix">
-                    <a href="<?php $p3=$pages2[0]; echo $nh1->getLinkToCollection($p3);?>">
+                    <a href="<?php echo $nh1->getLinkToCollection($p2);?>">
                         <div id="box19" class="clearfix">
                             <p class="header-block-type">Event</p>
                             <?php
-                                $postTitle = $p3->getCollectionName();
+                                $postTitle = $p2->getCollectionName();
                                 $toPost = "";
 
                                 if(strlen($postTitle)>20) {
