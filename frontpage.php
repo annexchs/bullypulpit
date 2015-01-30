@@ -21,18 +21,12 @@
                 ?>
             </div>
             <div id="box2" class="clearfix">
-                <p id="text">
+                <div id="box3" class="clearfix">
                 <?php
-                    $a = new GlobalArea('Sponsor Location');
-                    $a->display();
+                $a = new GlobalArea('CofC Top Logo');
+                $a->display();
                 ?>
-                </p>
-                    <div id="box3" class="clearfix">
-                    <?php
-                    $a = new GlobalArea('CofC Top Logo');
-                    $a->display();
-                    ?>
-                    </div>
+                </div>
             </div>
             <div id="box5" class="clearfix">
                 <nav id="primary-nav" role="nav">

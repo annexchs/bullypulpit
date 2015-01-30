@@ -21,12 +21,6 @@
                 ?>
               </div>
             <div id="box2" class="clearfix">
-                <p id="text">
-                <?php
-                    $a = new GlobalArea('Sponsor Location');
-                    $a->display();
-                ?>
-                </p>
                 <div id="box3" class="clearfix">
                 <?php
                 $a = new GlobalArea('CofC Top Logo');
@@ -81,7 +75,7 @@
                       $nh = Loader::helper('navigation');
                       $pl = new PageList();
                       $pl->filterByPath('/events_list', $includeAllChildren = true);
-                      $pl->sortByPublicDate();
+                      $pl->sortByPublicDateDescending();
                       $pages = $pl->get($itemsToGet = 10, $offset = 0);
 
                       foreach ($pages as $p) {

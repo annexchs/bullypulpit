@@ -22,12 +22,6 @@
                 ?>
               </div>
             <div id="box2" class="clearfix">
-                <p id="text">
-                <?php
-                    $a = new GlobalArea('Sponsor Location');
-                    $a->display();
-                ?>
-                </p>
                 <div id="box3" class="clearfix">
                 <?php
                 $a = new GlobalArea('CofC Top Logo');
