@@ -239,7 +239,7 @@
             </div>
             <div id="box20" class="clearfix">
                 <div id="box21" class="clearfix">
-                    <a href="../concrete/index.php/events-list">
+                    <a href="../index.php/events-list">
                         <div id="box22" class="clearfix" >
                             <p class="header-block-headline">See all Series events...</p>
                         </div>
