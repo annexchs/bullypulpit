@@ -812,8 +812,15 @@
   position: relative;
   top: 0px;
   left: 0px;
+}
+.primaryContainer .box30:nth-child(odd) .box31 .box32 {
   background-color: #012639;
 }
+
+.primaryContainer .box30:nth-child(even) .box31 .box32 {
+  background-color: #660000;
+}
+
 .primaryContainer .box31 {
   float: left;
   height: 100%;
