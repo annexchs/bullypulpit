@@ -813,11 +813,15 @@
   top: 0px;
   left: 0px;
 }
-.primaryContainer .box30:nth-child(odd) .box31 .box32 {
+.primaryContainer .box30:nth-child(n) .box31 .box32 {
   background-color: #012639;
 }
 
-.primaryContainer .box30:nth-child(even) .box31 .box32 {
+.primaryContainer .box30:nth-child(4n-1) .box31 .box32 {
+  background-color: #660000;
+}
+
+.primaryContainer .box30:nth-child(4n-2) .box31 .box32 {
   background-color: #660000;
 }
 
