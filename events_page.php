@@ -82,8 +82,8 @@
                 $eventEnd = $c->getAttribute('event_end');
                 $eventLocation = $c->getAttribute('job_location');
 
-                echo '<p><strong>',strftime("%A, %B %e",strtotime($eventStart)),'</strong>&ensp;<em>',strftime("%l:%M%P",strtotime($eventStart)),'&nbsp;&mdash;',strftime("%l:%M%P",strtotime($eventEnd)),'</em></p>';
-                echo '<p>',$eventLocation,'</p>';
+                echo '<p><strong>',strftime("%A, %B %e",strtotime($eventStart)),'</strong>&ensp;</p><p><em>',strftime("%l:%M%P",strtotime($eventStart)),'&nbsp;&mdash;',strftime("%l:%M%P",strtotime($eventEnd)),'</em></p>';
+                echo '<p class="event-location">',$eventLocation,'</p>';
                 echo '<p>',$c->getCollectionDescription(),'</p>';
               ?>
               </div>

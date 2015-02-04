@@ -812,13 +812,7 @@
   position: relative;
   top: 0px;
   left: 0px;
-}
-.primaryContainer .box32:nth-child(odd) {
   background-color: #012639;
-}
-
-.primaryContainer .box32:nth-child(even) {
-  background-color: #660000;
 }
 .primaryContainer .box31 {
   float: left;
@@ -1066,6 +1060,10 @@
 .primaryContainer .header-block-type {
     margin-top: 70px;
   }
+
+.event-location {
+  font-style: italic; 
+}
 
 @media only screen and (max-width: 1024px) {
   .primaryContainer #text8 {
